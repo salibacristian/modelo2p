@@ -20,13 +20,15 @@ import {MatSelectModule} from '@angular/material/select';
 import { AngularFireModule } from '@angular/fire';
 import {firebaseConfig} from "../environments/environment";
 import { LoginComponent } from './components/login/login.component';
+import { HomeComponent } from './components/home/home.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     RegisterComponent,
-    LoginComponent
+    LoginComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
