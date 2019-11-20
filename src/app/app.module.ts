@@ -22,6 +22,7 @@ import {firebaseConfig} from "../environments/environment";
 import { LoginComponent } from './components/login/login.component';
 import { HomeComponent } from './components/home/home.component';
 import { CsvExporterComponent } from './components/csv-exporter/csv-exporter.component';
+import { PdfExporterComponent } from './components/pdf-exporter/pdf-exporter.component';
 
 
 @NgModule({
@@ -30,7 +31,8 @@ import { CsvExporterComponent } from './components/csv-exporter/csv-exporter.com
     RegisterComponent,
     LoginComponent,
     HomeComponent,
-    CsvExporterComponent
+    CsvExporterComponent,
+    PdfExporterComponent
   ],
   imports: [
     BrowserModule,
