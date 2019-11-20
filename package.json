@@ -25,6 +25,8 @@
     "@angular/router": "~8.2.7",
     "angular2-jwt": "^0.2.3",
     "firebase": "^7.4.0",
+    "html2canvas": "^1.0.0-rc.5",
+    "jspdf": "^1.5.3",
     "rxjs": "~6.4.0",
     "rxjs-compat": "^6.5.3",
     "tslib": "^1.10.0",
