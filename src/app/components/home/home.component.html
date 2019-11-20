@@ -6,16 +6,22 @@
       <div>  
         <input type="button" value="CPTURE" (click)="captureScreen()"/>  
       </div>  
+      <div>  
+        <input type="button" value="CSV" (click)="downloadFile()"/>  
+      </div>  
     </mat-card>  
   </div>  
   <div >  
     <mat-card>  
-      <table id="contentToConvert">  
+      <table id="contentToConvert"> 
+        <thead>
           <tr>  
             <th>Column1</th>  
             <th>Column2</th>  
             <th>Column3</th>  
           </tr>  
+        </thead> 
+        <tbody>
           <tr>  
             <td>Row 1</td>  
             <td>Row 1</td>  
@@ -45,7 +51,8 @@
             <td>Row 6</td>  
             <td>Row 6</td>  
             <td>Row 6</td>  
-          </tr>  
+          </tr> 
+        </tbody> 
         </table>  
           
     </mat-card>  
