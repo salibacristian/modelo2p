@@ -6,9 +6,9 @@
       <div>  
         <input type="button" value="CPTURE" (click)="captureScreen()"/>  
       </div>  
-      <div>  
-        <input type="button" value="CSV" (click)="downloadFile()"/>  
-      </div>  
+      <div>
+        <app-csv-exporter [data]="array"></app-csv-exporter>
+      </div>
     </mat-card>  
   </div>  
   <div >  

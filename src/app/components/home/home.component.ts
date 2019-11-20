@@ -1,7 +1,6 @@
 import { Component, OnInit, ElementRef, ViewChild } from '@angular/core';
 import * as jspdf from 'jspdf'
 import html2canvas from 'html2canvas';
-import { saveAs } from 'file-saver';
 
 @Component({
   selector: 'app-home',
@@ -34,18 +33,6 @@ export class HomeComponent {
       pdf.addImage(contentDataURL, 'PNG', 0, position, imgWidth, imgHeight)
       pdf.save('MYPdf.pdf'); // Generated PDF   
     });
-  }
-
-  downloadFile() {
-    var data = this.array;
-    const replacer = (key, value) => value === null ? '' : value; // specify how you want to handle null values here
-    const header = Object.keys(data[0]);
-    let csv = data.map(row => header.map(fieldName => JSON.stringify(row[fieldName], replacer)).join(','));
-    csv.unshift(header.join(','));
-    let csvArray = csv.join('\r\n');
-
-    var blob = new Blob([csvArray], { type: 'text/csv' })
-    saveAs(blob, "myFile.csv");
   }
 
 }

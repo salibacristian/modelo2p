@@ -21,6 +21,7 @@ import { AngularFireModule } from '@angular/fire';
 import {firebaseConfig} from "../environments/environment";
 import { LoginComponent } from './components/login/login.component';
 import { HomeComponent } from './components/home/home.component';
+import { CsvExporterComponent } from './components/csv-exporter/csv-exporter.component';
 
 
 @NgModule({
@@ -28,7 +29,8 @@ import { HomeComponent } from './components/home/home.component';
     AppComponent,
     RegisterComponent,
     LoginComponent,
-    HomeComponent
+    HomeComponent,
+    CsvExporterComponent
   ],
   imports: [
     BrowserModule,
