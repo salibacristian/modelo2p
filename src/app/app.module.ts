@@ -16,6 +16,7 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatSelectModule} from '@angular/material/select';
+import {MatToolbarModule} from '@angular/material/toolbar';
 
 import { AngularFireModule } from '@angular/fire';
 import {firebaseConfig} from "../environments/environment";
@@ -24,6 +25,7 @@ import { HomeComponent } from './components/home/home.component';
 import { CsvExporterComponent } from './components/csv-exporter/csv-exporter.component';
 import { PdfExporterComponent } from './components/pdf-exporter/pdf-exporter.component';
 import { AltaVehiculoComponent } from './components/alta-vehiculo/alta-vehiculo.component';
+import { HeaderComponent } from './components/header/header.component';
 
 
 @NgModule({
@@ -34,7 +36,8 @@ import { AltaVehiculoComponent } from './components/alta-vehiculo/alta-vehiculo.
     HomeComponent,
     CsvExporterComponent,
     PdfExporterComponent,
-    AltaVehiculoComponent
+    AltaVehiculoComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
@@ -42,7 +45,7 @@ import { AltaVehiculoComponent } from './components/alta-vehiculo/alta-vehiculo.
     AppRoutingModule,
     FormsModule,
     BrowserAnimationsModule,
-    MatTabsModule,MatIconModule,MatCardModule,MatButtonModule,MatProgressSpinnerModule,MatInputModule,MatFormFieldModule,MatSelectModule,
+    MatTabsModule,MatIconModule,MatCardModule,MatButtonModule,MatProgressSpinnerModule,MatInputModule,MatFormFieldModule,MatSelectModule,MatToolbarModule
   ],
   providers: [],
   bootstrap: [AppComponent]
