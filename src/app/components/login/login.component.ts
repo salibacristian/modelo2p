@@ -26,6 +26,11 @@ export class LoginComponent implements OnInit {
     this.firebaseService.login(this.usuario, this.clave);
   }
 
+  completar(email,pass){
+    this.usuario=email;
+    this.clave=pass;
+  }
+
 }
 
 
