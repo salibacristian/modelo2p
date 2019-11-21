@@ -1,0 +1,23 @@
+<div class="example-container">
+    <mat-form-field>
+        <input type="text" matInput placeholder="Marca" [(ngModel)]="vehiculo.marca" name="marca">
+    </mat-form-field>
+    <mat-form-field>
+        <input type="text" matInput placeholder="Modelo" [(ngModel)]="vehiculo.modelo" name="modelo">
+    </mat-form-field>
+    <mat-form-field>
+        <input type="text" matInput placeholder="Año" [(ngModel)]="vehiculo.year" name="año">
+    </mat-form-field>
+    <mat-form-field>
+        <input type="text" matInput placeholder="Kilometros" [(ngModel)]="vehiculo.kilometros" name="kilometros">
+    </mat-form-field>
+    <mat-form-field>
+        <mat-select placeholder="Tipo" [(ngModel)]="vehiculo.tipo">
+            <mat-option value="1">Auto</mat-option>
+            <mat-option value="2">Camioneta</mat-option>
+            <mat-option value="3">Camion</mat-option>
+        </mat-select>
+    </mat-form-field>
+    <!-- FOTO -->
+    <button mat-raised-button color="primary" (click)="Register()">Registrar</button>
+</div>

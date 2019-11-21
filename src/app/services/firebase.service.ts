@@ -3,7 +3,8 @@ import { Injectable } from '@angular/core';
 import * as firebase from "firebase/app";
 import { firebaseConfig } from "../../environments/environment";
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
-import { User } from "../model/User";
+import { Concesionaria } from "../model/Concesionaria";
+import { Vehiculo } from "../model/Vehiculo";
 
 firebase.initializeApp(firebaseConfig);
 var db = firebase.firestore();
@@ -38,13 +39,13 @@ export class FirebaseService {
   }
 
 
-  register(usuario: User) {
+  registrarConcesionaria(concesionaria: Concesionaria) {
     var router = this.router;
-    var addUser = this.addUser;
-    firebase.auth().createUserWithEmailAndPassword(usuario.email, usuario.password)
+    var agregarConcesionaria = this.agregarConcesionaria;
+    firebase.auth().createUserWithEmailAndPassword(concesionaria.email, concesionaria.clave)
       .then(function (res) {
-        usuario.id = res.user.uid;
-        addUser(usuario);
+        concesionaria.id = res.user.uid;
+        agregarConcesionaria(concesionaria);
         res.user.getIdToken()
           .then(function (token) {
             localStorage.setItem('token', token);
@@ -96,12 +97,33 @@ export class FirebaseService {
     });
   } 
 
-  addUser(user: User) {
+  agregarConcesionaria(concesionaria: Concesionaria) {
     var db = firebase.firestore();
-    db.collection("users").add({
-      email: user.email,
-      type: user.type,
-      id: user.id
+    db.collection("concesionarias").add({
+      email: concesionaria.email,
+      razonSocial: concesionaria.razonSocial,
+      tel: concesionaria.tel,
+      localidad: concesionaria.localidad,
+      id: concesionaria.id
+    })
+      .then(function (docRef) {
+        console.log("Document written with ID: ", docRef.id);
+      })
+      .catch(function (error) {
+        console.error("Error adding document: ", error);
+      });
+  }
+
+  agregarVehiculo(vehiculo: Vehiculo) {
+    var db = firebase.firestore();
+    db.collection("vehiculos").add({
+      marca: vehiculo.marca,
+      modelo: vehiculo.modelo,
+      year: vehiculo.year,
+      kilometros: vehiculo.kilometros,
+      tipo: vehiculo.tipo,
+      foto: vehiculo.foto,
+      id: vehiculo.id
     })
       .then(function (docRef) {
         console.log("Document written with ID: ", docRef.id);
@@ -140,14 +162,14 @@ export class FirebaseService {
   //     }
   // }
 
-  async getUsers() {
-    // return await db.collection("usuarios").get();
-    let usrsRef = await db.collection('users').get();
-    return usrsRef;
-    // for(let u of usrsRef.docs) {
-    //     console.log(u.id, u.data())
-    // } 
-  }
+  // async getUsers() {
+  //   // return await db.collection("usuarios").get();
+  //   let usrsRef = await db.collection('users').get();
+  //   return usrsRef;
+  //   // for(let u of usrsRef.docs) {
+  //   //     console.log(u.id, u.data())
+  //   // } 
+  // }
 
   // async getResultados() {
   //   // return await db.collection("usuarios").get();

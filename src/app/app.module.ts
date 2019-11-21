@@ -23,6 +23,7 @@ import { LoginComponent } from './components/login/login.component';
 import { HomeComponent } from './components/home/home.component';
 import { CsvExporterComponent } from './components/csv-exporter/csv-exporter.component';
 import { PdfExporterComponent } from './components/pdf-exporter/pdf-exporter.component';
+import { AltaVehiculoComponent } from './components/alta-vehiculo/alta-vehiculo.component';
 
 
 @NgModule({
@@ -32,7 +33,8 @@ import { PdfExporterComponent } from './components/pdf-exporter/pdf-exporter.com
     LoginComponent,
     HomeComponent,
     CsvExporterComponent,
-    PdfExporterComponent
+    PdfExporterComponent,
+    AltaVehiculoComponent
   ],
   imports: [
     BrowserModule,

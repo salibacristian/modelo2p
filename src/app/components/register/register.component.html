@@ -1,16 +1,19 @@
 <div class="example-container">
     <mat-form-field>
-            <input type="email" matInput placeholder="Email" [(ngModel)]="user.email" name="email">
+            <input type="email" matInput placeholder="Email" [(ngModel)]="vehiculo.email" name="email">
     </mat-form-field>
     <mat-form-field>
-            <input type="password" matInput placeholder="Clave" [(ngModel)]="user.clave" name="clave">
+            <input type="password" matInput placeholder="Clave" [(ngModel)]="vehiculo.clave" name="clave">
     </mat-form-field>
     <mat-form-field>
-            <mat-select placeholder="Tipo" [(ngModel)]="user.type">
-                    <mat-option value="1">Administrador</mat-option>
-                    <mat-option value="2">Profesor</mat-option>
-                    <mat-option value="3">Alumno</mat-option>
-            </mat-select>
-    </mat-form-field>
-    <button mat-raised-button color="primary" (click)="Register()">Registrarme</button>
+        <input type="text" matInput placeholder="Razon Social" [(ngModel)]="vehiculo.razonSocial" name="razonSocial">
+</mat-form-field>
+<mat-form-field>
+        <input type="text" matInput placeholder="Telefono" [(ngModel)]="vehiculo.tel" name="tel">
+</mat-form-field>
+<mat-form-field>
+        <input type="text" matInput placeholder="Localidad" [(ngModel)]="vehiculo.localidad" name="localidad">
+</mat-form-field>
+
+    <button mat-raised-button color="primary" (click)="Register()">Registrar</button>
 </div>
