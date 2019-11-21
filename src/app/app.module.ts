@@ -26,6 +26,7 @@ import { CsvExporterComponent } from './components/csv-exporter/csv-exporter.com
 import { PdfExporterComponent } from './components/pdf-exporter/pdf-exporter.component';
 import { AltaVehiculoComponent } from './components/alta-vehiculo/alta-vehiculo.component';
 import { HeaderComponent } from './components/header/header.component';
+import { TipoVehiculoPipe } from './pipes/tipo-vehiculo.pipe';
 
 
 @NgModule({
@@ -37,7 +38,8 @@ import { HeaderComponent } from './components/header/header.component';
     CsvExporterComponent,
     PdfExporterComponent,
     AltaVehiculoComponent,
-    HeaderComponent
+    HeaderComponent,
+    TipoVehiculoPipe
   ],
   imports: [
     BrowserModule,
