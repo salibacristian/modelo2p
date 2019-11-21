@@ -123,7 +123,6 @@ export class FirebaseService {
       kilometros: vehiculo.kilometros,
       tipo: vehiculo.tipo,
       foto: vehiculo.foto,
-      id: vehiculo.id
     })
       .then(function (docRef) {
         console.log("Document written with ID: ", docRef.id);

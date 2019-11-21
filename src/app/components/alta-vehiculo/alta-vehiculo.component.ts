@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import {FirebaseService} from "../../services/firebase.service";
+import { FirebaseService } from "../../services/firebase.service";
 import { Vehiculo } from "../../model/Vehiculo";
 
 @Component({
@@ -10,15 +10,16 @@ import { Vehiculo } from "../../model/Vehiculo";
 })
 export class AltaVehiculoComponent implements OnInit {
 
-  constructor( private firebaseService: FirebaseService) { }
+  constructor(private firebaseService: FirebaseService, private router: Router, ) { }
 
-  vehiculo: Vehiculo = new Vehiculo('','',2019,0,1,'');
+  vehiculo: Vehiculo = new Vehiculo('', '', 2019, 0, 1, '');
 
   ngOnInit() {
   }
 
-  Register(){
+  Register() {
     this.firebaseService.agregarVehiculo(this.vehiculo);
+    this.router.navigate(['/home']);
   }
 
 }
