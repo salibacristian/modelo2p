@@ -132,6 +132,15 @@ export class FirebaseService {
       });
   }
 
+  async getVehiculos() {
+    // return await db.collection("usuarios").get();
+    let vehiculosRef = await db.collection('vehiculos').get();
+    return vehiculosRef;
+    // for(let u of usrsRef.docs) {
+    //     console.log(u.id, u.data())
+    // } 
+  }
+
   // async saveResult(juego, gano) {   
   //     await this.getCurrentUser();
   //     var db = firebase.firestore();
@@ -169,6 +178,8 @@ export class FirebaseService {
   //   //     console.log(u.id, u.data())
   //   // } 
   // }
+
+  
 
   // async getResultados() {
   //   // return await db.collection("usuarios").get();
